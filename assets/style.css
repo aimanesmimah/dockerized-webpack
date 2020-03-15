@@ -1,0 +1,13 @@
+html, body, p {
+    margin: 0;
+    padding: 0;
+}
+
+#app {
+    display: flex;
+    justify-content: center;
+    margin: 0;
+    height: 100vh;
+    background-color: rgb(150, 212, 248) ;
+}
+
