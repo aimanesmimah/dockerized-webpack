@@ -26,7 +26,7 @@
     "start": "npm-run-all -l -p watch:server start:server",
     "watch:app": "webpack --watch --progress",
     "watch:server": "tsc -w",
-    "start:server": "ts-node ./dist/server.js",
+    "start:server": "nodemon ./dist/server.js",
     "prettier": "prettier --write '*.{ts,js}'"
   },
   "devDependencies": {

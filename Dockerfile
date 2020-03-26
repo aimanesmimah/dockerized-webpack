@@ -4,7 +4,6 @@ WORKDIR /front/app
 
 COPY package.json tsconfig.json ./
 RUN yarn install
-RUN yarn global add ts-node
 
 COPY assets dist ./
 COPY index.ts index.html server.ts webpack.config.js ./ 
