@@ -11,7 +11,6 @@ import {
   Request,
   Response,
   NextFunction,
-  Handler,
   RequestHandler,
 } from 'express'
 import { Options as DevMiddlewareOptions  } from 'webpack-dev-middleware'
@@ -43,7 +42,6 @@ const app: Application = express()
 
 
 // middlewares
-app.use(<Handler>express.static(path.join(__dirname, 'assets')))
 
 const webpackConfig: Configuration = require(WEBPACK_CONFIG_PATH)
 const webpackCompiler: Compiler = webpack(webpackConfig)
@@ -94,7 +92,7 @@ class Handlers {
   }
 
   public static TestHandler: RequestHandler = (req: Request, res: Response) => {
-    res.json({ server: `is running at port ${PORT}...` })
+    res.json({ server: `is running on port ${PORT}...` })
   }
 }
 
@@ -104,5 +102,5 @@ app.get('/test', Handlers.TestHandler)
 
 // mounting the server 
 app.listen(PORT, () => {
-  console.log(`${ENV} server is running at port:: ${PORT}`)
+  console.log(`${ENV} server is running on port: ${PORT}`)
 })
