@@ -1,13 +1,32 @@
 {
   "name": "dockerized-webpack",
   "version": "1.0.0",
-  "description": "",
+  "description": "a solution to maintain development hot reloading inside a docker container",
+  "author": "ayman smimah <aymansmimah@gmail.com>",
+  "repository": {
+    "url": "https://github.com/cloudstrife9494/dockerized-webpack.git"
+  },
+  "license": "ISC",
+  "keywords": [
+    "docker",
+    "webpack",
+    "demostration",
+    "containerization",
+    "dockerizing webpack",
+    "dockerization demo",
+    "dockerizing development",
+    "dockerizing frontend",
+    "development process",
+    "develoment environment",
+    "hot reloading",
+    "development hot reloading"
+  ],
   "main": "index.ts",
   "scripts": {
     "start": "npm-run-all -l -p watch:server start:server",
     "watch:app": "webpack --watch --progress",
     "watch:server": "tsc -w",
-    "start:server": "nodemon --legacy-watch ./dist/server.js",
+    "start:server": "ts-node ./dist/server.js",
     "prettier": "prettier --write '*.{ts,js}'"
   },
   "devDependencies": {
@@ -25,7 +44,5 @@
     "webpack-cli": "^3.3.10",
     "webpack-dev-middleware": "^3.7.2",
     "webpack-hot-middleware": "^2.25.0"
-  },
-  "author": "ayman smimah",
-  "license": "ISC"
+  }
 }
